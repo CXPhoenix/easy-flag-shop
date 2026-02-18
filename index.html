@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hacker-black': '#0a0a0a',
+                        'hacker-green': '#00ff00',
+                        'hacker-dark-green': '#003300',
+                        'hacker-gray': '#1a1a1a',
+                    },
+                    fontFamily: {
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", "monospace"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        /* Custom scrollbar for hacker vibe */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #003300;
+            border: 1px solid #00ff00;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ff00;
+        }
+    </style>
+    <title>FLAG 飄揚商店</title>
+</head>
+
+<body class="h-screen flex flex-col overflow-hidden">
+    <app-header></app-header>
+    
+    <main id="app" class="flex-1 overflow-auto p-4 relative">
+        <!-- Views will be injected here -->
+        <div id="view-container" class="container mx-auto max-w-6xl"></div>
+    </main>
+
+    <cart-modal></cart-modal>
+
+    <!-- App Entry -->
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+
+</html>
