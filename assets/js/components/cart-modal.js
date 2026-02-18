@@ -1,5 +1,5 @@
+
 import { store } from '../store.js';
-import { decrypt } from '../utils/crypto.js';
 
 export class CartModal extends HTMLElement {
     connectedCallback() {

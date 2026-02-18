@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { encrypt } from '../assets/js/utils/crypto.js';
+import { _0x5a1b } from '../assets/js/utils/crypto.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,7 +21,7 @@ async function build() {
             // content: {fusingOrEncryptItemContent}
             return {
                 ...item,
-                content: encrypt(item.content)
+                content: _0x5a1b(item.content)
             };
         });
 
@@ -31,10 +31,6 @@ async function build() {
 
         console.log('✅ Build complete! Products generated at assets/data/products.json');
         
-        // Verification (Optional: print first item decrypted to verify logic matches)
-        // import { decrypt } from '../assets/js/utils/crypto.js';
-        // console.log("Verification Decrypt:", decrypt(encryptedItems[0].content));
-
     } catch (error) {
         console.error('❌ Build failed:', error);
         process.exit(1);

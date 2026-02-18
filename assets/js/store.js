@@ -1,4 +1,4 @@
-import { decrypt } from './utils/crypto.js';
+import { _0x26db16 } from './utils/crypto.js';
 
 class Store extends EventTarget {
     constructor() {
@@ -98,7 +98,7 @@ class Store extends EventTarget {
         const decryptedItems = purchasedItems.map(item => {
             return {
                 ...item,
-                content: item.content ? decrypt(item.content) : ""
+                content: item.content ? _0x26db16(item.content) : ""
             };
         });
 
